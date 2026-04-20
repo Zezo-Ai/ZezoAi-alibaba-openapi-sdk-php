@@ -14,6 +14,7 @@ use AlibabaCloud\Client\Resolver\ApiResolver;
  * @method AddUserGroupMembers addUserGroupMembers(array $options = [])
  * @method AddUserTagMeta addUserTagMeta(array $options = [])
  * @method AddUserToWorkspace addUserToWorkspace(array $options = [])
+ * @method AddWorksAuthorization addWorksAuthorization(array $options = [])
  * @method AddWorkspaceUsers addWorkspaceUsers(array $options = [])
  * @method AllotDatasetAccelerationTask allotDatasetAccelerationTask(array $options = [])
  * @method AuthorizeMenu authorizeMenu(array $options = [])
@@ -239,6 +240,8 @@ class AddShareReport extends Rpc
  * @method $this withAccessPoint($value)
  * @method string getAccountType()
  * @method $this withAccountType($value)
+ * @method string getCopilotModules()
+ * @method $this withCopilotModules($value)
  * @method string getAccountId()
  * @method $this withAccountId($value)
  * @method string getRoleIds()
@@ -336,6 +339,31 @@ class AddUserTagMeta extends Rpc
  */
 class AddUserToWorkspace extends Rpc
 {
+}
+
+/**
+ * @method string getAccessPoint()
+ * @method $this withAccessPoint($value)
+ * @method string getAuthorizedId()
+ * @method $this withAuthorizedId($value)
+ * @method string getAuthPoints()
+ * @method $this withAuthPoints($value)
+ * @method string getAuthorizeScope()
+ * @method $this withAuthorizeScope($value)
+ * @method string getResourceId()
+ * @method $this withResourceId($value)
+ * @method string getSignType()
+ * @method $this withSignType($value)
+ * @method string getResourceType()
+ * @method $this withResourceType($value)
+ * @method string getExpireDay()
+ * @method $this withExpireDay($value)
+ */
+class AddWorksAuthorization extends Rpc
+{
+
+    /** @var string */
+    public $scheme = 'https';
 }
 
 /**
@@ -2237,6 +2265,8 @@ class UpdateTicketNum extends Rpc
  * @method $this withAccountType($value)
  * @method string getAccessPoint()
  * @method $this withAccessPoint($value)
+ * @method string getCopilotModules()
+ * @method $this withCopilotModules($value)
  * @method string getUserId()
  * @method $this withUserId($value)
  * @method string getIsDeleted()

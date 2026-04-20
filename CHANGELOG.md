@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.8.2340 - 2026-4-20
+- Add and update some APIs.
+
+
 ## 1.8.2339 - 2026-4-13
 - Remove the default value for the `ReplicationFactor` parameter in the `ModifyDBInstanceSpec` API.
 
