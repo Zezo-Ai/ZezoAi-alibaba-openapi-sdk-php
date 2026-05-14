@@ -59,6 +59,7 @@ use AlibabaCloud\Client\Resolver\ApiResolver;
  * @method PublishFeatureViewTable publishFeatureViewTable(array $options = [])
  * @method StopTask stopTask(array $options = [])
  * @method UpdateDatasource updateDatasource(array $options = [])
+ * @method UpdateFeatureView updateFeatureView(array $options = [])
  * @method UpdateLabelTable updateLabelTable(array $options = [])
  * @method UpdateLLMConfig updateLLMConfig(array $options = [])
  * @method UpdateModelFeature updateModelFeature(array $options = [])
@@ -977,6 +978,7 @@ class ListDatasources extends Roa
 }
 
 /**
+ * @method string getSchemaName()
  * @method string getInstanceId()
  * @method $this withInstanceId($value)
  * @method string getDatasourceId()
@@ -993,6 +995,19 @@ class ListDatasourceTables extends Roa
      *
      * @return $this
      */
+    public function withSchemaName($value)
+    {
+        $this->data['SchemaName'] = $value;
+        $this->options['query']['SchemaName'] = $value;
+
+        return $this;
+    }
+
+    /**
+     * @param string $value
+     *
+     * @return $this
+     */
     public function withTableName($value)
     {
         $this->data['TableName'] = $value;
@@ -1003,15 +1018,16 @@ class ListDatasourceTables extends Roa
 }
 
 /**
- * @method string getOwner()
+ * @method string getParentFeatureEntityId()
  * @method string getPageNumber()
+ * @method string getPageSize()
+ * @method string getProjectId()
+ * @method string getOrder()
+ * @method string getOwner()
  * @method string getInstanceId()
  * @method $this withInstanceId($value)
  * @method string getName()
- * @method string getPageSize()
  * @method string getSortBy()
- * @method string getProjectId()
- * @method string getOrder()
  */
 class ListFeatureEntities extends Roa
 {
@@ -1023,10 +1039,10 @@ class ListFeatureEntities extends Roa
      *
      * @return $this
      */
-    public function withOwner($value)
+    public function withParentFeatureEntityId($value)
     {
-        $this->data['Owner'] = $value;
-        $this->options['query']['Owner'] = $value;
+        $this->data['ParentFeatureEntityId'] = $value;
+        $this->options['query']['ParentFeatureEntityId'] = $value;
 
         return $this;
     }
@@ -1049,36 +1065,10 @@ class ListFeatureEntities extends Roa
      *
      * @return $this
      */
-    public function withName($value)
-    {
-        $this->data['Name'] = $value;
-        $this->options['query']['Name'] = $value;
-
-        return $this;
-    }
-
-    /**
-     * @param string $value
-     *
-     * @return $this
-     */
     public function withPageSize($value)
     {
         $this->data['PageSize'] = $value;
         $this->options['query']['PageSize'] = $value;
-
-        return $this;
-    }
-
-    /**
-     * @param string $value
-     *
-     * @return $this
-     */
-    public function withSortBy($value)
-    {
-        $this->data['SortBy'] = $value;
-        $this->options['query']['SortBy'] = $value;
 
         return $this;
     }
@@ -1108,6 +1098,45 @@ class ListFeatureEntities extends Roa
 
         return $this;
     }
+
+    /**
+     * @param string $value
+     *
+     * @return $this
+     */
+    public function withOwner($value)
+    {
+        $this->data['Owner'] = $value;
+        $this->options['query']['Owner'] = $value;
+
+        return $this;
+    }
+
+    /**
+     * @param string $value
+     *
+     * @return $this
+     */
+    public function withName($value)
+    {
+        $this->data['Name'] = $value;
+        $this->options['query']['Name'] = $value;
+
+        return $this;
+    }
+
+    /**
+     * @param string $value
+     *
+     * @return $this
+     */
+    public function withSortBy($value)
+    {
+        $this->data['SortBy'] = $value;
+        $this->options['query']['SortBy'] = $value;
+
+        return $this;
+    }
 }
 
 /**
@@ -1130,6 +1159,7 @@ class ListFeatureViewFieldRelationships extends Roa
  * @method string getJoinIds()
  * @method string getFeatureViewId()
  * @method $this withFeatureViewId($value)
+ * @method string getConfig()
  */
 class ListFeatureViewOnlineFeatures extends Roa
 {
@@ -1145,6 +1175,19 @@ class ListFeatureViewOnlineFeatures extends Roa
     {
         $this->data['JoinIds'] = $value;
         $this->options['query']['JoinIds'] = $value;
+
+        return $this;
+    }
+
+    /**
+     * @param string $value
+     *
+     * @return $this
+     */
+    public function withConfig($value)
+    {
+        $this->data['Config'] = $value;
+        $this->options['query']['Config'] = $value;
 
         return $this;
     }
@@ -2196,6 +2239,38 @@ class UpdateDatasource extends Roa
 {
     /** @var string */
     public $pathPattern = '/api/v1/instances/[InstanceId]/datasources/[DatasourceId]';
+
+    /** @var string */
+    public $method = 'PUT';
+
+    /**
+     * @param string $value
+     *
+     * @return $this
+     */
+    public function withBody($value)
+    {
+        $this->data['Body'] = $value;
+        $this->options['form_params']['body'] = $value;
+
+        return $this;
+    }
+}
+
+/**
+ * @method string getBody()
+ * @method string getInstanceId()
+ * @method $this withInstanceId($value)
+ * @method string getFeatureViewId()
+ * @method $this withFeatureViewId($value)
+ */
+class UpdateFeatureView extends Roa
+{
+    /** @var string */
+    public $pathPattern = '/api/v1/instances/[InstanceId]/featureviews/[FeatureViewId]';
+
+    /** @var string */
+    public $scheme = 'https';
 
     /** @var string */
     public $method = 'PUT';

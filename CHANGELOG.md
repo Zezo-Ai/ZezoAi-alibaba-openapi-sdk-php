@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 1.8.2341 - 2026-5-14
+- Add WorkspaceId output for ListProjects and GetProject.
+- Add Config input for ListFeatureViewOnlineFeatures.
+
+
 ## 1.8.2340 - 2026-4-20
 - Add and update some APIs.
 
