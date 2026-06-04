@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.8.2342 - 2026-6-4
+- Generated 2025-04-29 for `WebsiteBuild`.
+
+
 ## 1.8.2341 - 2026-5-14
 - Add WorkspaceId output for ListProjects and GetProject.
 - Add Config input for ListFeatureViewOnlineFeatures.
