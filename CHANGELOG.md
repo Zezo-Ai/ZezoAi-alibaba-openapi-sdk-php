@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.8.2343 - 2026-6-11
+- Add and update some APIs.
+
+
 ## 1.8.2342 - 2026-6-4
 - Generated 2025-04-29 for `WebsiteBuild`.
 

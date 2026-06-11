@@ -26,6 +26,7 @@ use AlibabaCloud\Client\Resolver\ApiResolver;
  * @method CheckDatasetExisted checkDatasetExisted(array $options = [])
  * @method CheckOrganizationMember checkOrganizationMember(array $options = [])
  * @method CheckReadable checkReadable(array $options = [])
+ * @method ClearDynamicTagCache clearDynamicTagCache(array $options = [])
  * @method CreateCubeBySql createCubeBySql(array $options = [])
  * @method CreateDataset createDataset(array $options = [])
  * @method CreateTicket createTicket(array $options = [])
@@ -57,6 +58,7 @@ use AlibabaCloud\Client\Resolver\ApiResolver;
  * @method ListCubeDataLevelPermissionConfig listCubeDataLevelPermissionConfig(array $options = [])
  * @method ListDataLevelPermissionWhiteList listDataLevelPermissionWhiteList(array $options = [])
  * @method ListDataSource listDataSource(array $options = [])
+ * @method ListDynamicTag listDynamicTag(array $options = [])
  * @method ListFavoriteReports listFavoriteReports(array $options = [])
  * @method ListOrganizationRoles listOrganizationRoles(array $options = [])
  * @method ListOrganizationRoleUsers listOrganizationRoleUsers(array $options = [])
@@ -540,6 +542,21 @@ class CheckOrganizationMember extends Rpc
  */
 class CheckReadable extends Rpc
 {
+}
+
+/**
+ * @method string getAccessPoint()
+ * @method $this withAccessPoint($value)
+ * @method string getSignType()
+ * @method $this withSignType($value)
+ * @method string getConfigId()
+ * @method $this withConfigId($value)
+ */
+class ClearDynamicTagCache extends Rpc
+{
+
+    /** @var string */
+    public $scheme = 'https';
 }
 
 /**
@@ -1064,6 +1081,19 @@ class ListDataLevelPermissionWhiteList extends Rpc
  * @method $this withWorkspaceId($value)
  */
 class ListDataSource extends Rpc
+{
+
+    /** @var string */
+    public $scheme = 'https';
+}
+
+/**
+ * @method string getAccessPoint()
+ * @method $this withAccessPoint($value)
+ * @method string getSignType()
+ * @method $this withSignType($value)
+ */
+class ListDynamicTag extends Rpc
 {
 
     /** @var string */
