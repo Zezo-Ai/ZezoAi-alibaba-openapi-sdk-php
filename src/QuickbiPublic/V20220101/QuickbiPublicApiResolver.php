@@ -37,6 +37,7 @@ use AlibabaCloud\Client\Resolver\ApiResolver;
  * @method DataSetBlood dataSetBlood(array $options = [])
  * @method DataSourceBlood dataSourceBlood(array $options = [])
  * @method DelayTicketExpireTime delayTicketExpireTime(array $options = [])
+ * @method DeleteAuthorizationByUserId deleteAuthorizationByUserId(array $options = [])
  * @method DeleteDataLevelPermissionRuleUsers deleteDataLevelPermissionRuleUsers(array $options = [])
  * @method DeleteDataLevelRuleConfig deleteDataLevelRuleConfig(array $options = [])
  * @method DeleteTicket deleteTicket(array $options = [])
@@ -51,6 +52,7 @@ use AlibabaCloud\Client\Resolver\ApiResolver;
  * @method GetMailTaskStatus getMailTaskStatus(array $options = [])
  * @method GetUserGroupInfo getUserGroupInfo(array $options = [])
  * @method GetWorksEmbedList getWorksEmbedList(array $options = [])
+ * @method IpWhiteListConfig ipWhiteListConfig(array $options = [])
  * @method ListAccelerationOfWorkspace listAccelerationOfWorkspace(array $options = [])
  * @method ListApiDatasource listApiDatasource(array $options = [])
  * @method ListByUserGroupId listByUserGroupId(array $options = [])
@@ -128,6 +130,7 @@ use AlibabaCloud\Client\Resolver\ApiResolver;
  * @method SmartqAuthorize smartqAuthorize(array $options = [])
  * @method SmartqAuthTransfer smartqAuthTransfer(array $options = [])
  * @method SmartqQueryAbility smartqQueryAbility(array $options = [])
+ * @method TransferUsergroup transferUsergroup(array $options = [])
  * @method UpdateCubeBySql updateCubeBySql(array $options = [])
  * @method UpdateDataLevelPermissionStatus updateDataLevelPermissionStatus(array $options = [])
  * @method UpdateDataSource updateDataSource(array $options = [])
@@ -564,6 +567,7 @@ class ClearDynamicTagCache extends Rpc
  * @method $this withDsId($value)
  * @method string getAccessPoint()
  * @method $this withAccessPoint($value)
+ * @method string getPlaceholders()
  * @method string getCaption()
  * @method $this withCaption($value)
  * @method string getUserId()
@@ -580,6 +584,19 @@ class CreateCubeBySql extends Rpc
 
     /** @var string */
     public $scheme = 'https';
+
+    /**
+     * @param string $value
+     *
+     * @return $this
+     */
+    public function withPlaceholders($value)
+    {
+        $this->data['Placeholders'] = $value;
+        $this->options['form_params']['Placeholders'] = $value;
+
+        return $this;
+    }
 }
 
 /**
@@ -623,7 +640,6 @@ class CreateDataset extends Rpc
  * @method string getCmptId()
  * @method $this withCmptId($value)
  * @method string getGlobalParam()
- * @method $this withGlobalParam($value)
  * @method string getWorksId()
  * @method $this withWorksId($value)
  * @method string getTicketNum()
@@ -633,6 +649,19 @@ class CreateDataset extends Rpc
  */
 class CreateTicket extends Rpc
 {
+
+    /**
+     * @param string $value
+     *
+     * @return $this
+     */
+    public function withGlobalParam($value)
+    {
+        $this->data['GlobalParam'] = $value;
+        $this->options['form_params']['GlobalParam'] = $value;
+
+        return $this;
+    }
 }
 
 /**
@@ -769,6 +798,25 @@ class DataSourceBlood extends Rpc
  */
 class DelayTicketExpireTime extends Rpc
 {
+}
+
+/**
+ * @method string getAccessPoint()
+ * @method $this withAccessPoint($value)
+ * @method string getQbiUserId()
+ * @method $this withQbiUserId($value)
+ * @method string getResourceId()
+ * @method $this withResourceId($value)
+ * @method string getSignType()
+ * @method $this withSignType($value)
+ * @method string getResourceType()
+ * @method $this withResourceType($value)
+ */
+class DeleteAuthorizationByUserId extends Rpc
+{
+
+    /** @var string */
+    public $scheme = 'https';
 }
 
 /**
@@ -971,6 +1019,23 @@ class GetUserGroupInfo extends Rpc
  * @method $this withPageNo($value)
  */
 class GetWorksEmbedList extends Rpc
+{
+
+    /** @var string */
+    public $scheme = 'https';
+}
+
+/**
+ * @method string getAccessPoint()
+ * @method $this withAccessPoint($value)
+ * @method string getIpWhiteList()
+ * @method $this withIpWhiteList($value)
+ * @method string getSignType()
+ * @method $this withSignType($value)
+ * @method string getOperation()
+ * @method $this withOperation($value)
+ */
+class IpWhiteListConfig extends Rpc
 {
 
     /** @var string */
@@ -2207,10 +2272,29 @@ class SmartqQueryAbility extends Rpc
 }
 
 /**
+ * @method string getAccessPoint()
+ * @method $this withAccessPoint($value)
+ * @method string getParentUserGroupId()
+ * @method $this withParentUserGroupId($value)
+ * @method string getUserGroupId()
+ * @method $this withUserGroupId($value)
+ * @method string getSignType()
+ * @method $this withSignType($value)
+ */
+class TransferUsergroup extends Rpc
+{
+
+    /** @var string */
+    public $scheme = 'https';
+}
+
+/**
  * @method string getDsId()
  * @method $this withDsId($value)
  * @method string getAccessPoint()
  * @method $this withAccessPoint($value)
+ * @method string getPlaceholders()
+ * @method $this withPlaceholders($value)
  * @method string getUserId()
  * @method $this withUserId($value)
  * @method string getCubeId()

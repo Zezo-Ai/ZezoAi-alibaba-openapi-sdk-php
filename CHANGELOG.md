@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.8.2344 - 2026-7-2
+- Add and update some APIs.
+
+
 ## 1.8.2343 - 2026-6-11
 - Add and update some APIs.
 
